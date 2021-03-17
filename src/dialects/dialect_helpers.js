@@ -1,6 +1,7 @@
-var DialectHelpers = {};
+const DialectHelpers = {};
 DialectHelpers.inline_until_char = function (text, want) {
-  var consumed = 0, nodes = [];
+  let consumed = 0;
+  const nodes = [];
   while (true) {
     if (text.charAt(consumed) === want) {
       consumed++;
@@ -9,7 +10,10 @@ DialectHelpers.inline_until_char = function (text, want) {
     if (consumed >= text.length) {
       return [consumed, null, nodes];
     }
-    var res = this.dialect.inline.__oneElement__.call(this, text.substr(consumed));
+    const res = this.dialect.inline.__oneElement__.call(
+      this,
+      text.substr(consumed)
+    );
     consumed += res[0];
     nodes.push.apply(nodes, res.slice(1));
   }
@@ -21,7 +25,7 @@ DialectHelpers.subclassDialect = function (d) {
   Inline.prototype = d.inline;
   return {
     block: new Block(),
-    inline: new Inline()
+    inline: new Inline(),
   };
 };
 export default DialectHelpers;

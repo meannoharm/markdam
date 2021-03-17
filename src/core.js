@@ -7,7 +7,9 @@ var Markdown = function (dialect) {
       this.dialect = dialect;
       break;
     default:
-      if ((dialect in Markdown.dialects)) this.dialect = Markdown.dialects[dialect]; else throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");
+      if (dialect in Markdown.dialects)
+        this.dialect = Markdown.dialects[dialect];
+      else throw new Error(`Unknown Markdown dialect '${String(dialect)}'`);
       break;
   }
   this.em_state = [];

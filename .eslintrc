@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "eslint-config-ali/node",
+    "plugin:prettier/recommended"
+  ]
+}
