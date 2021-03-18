@@ -1,2 +1,5 @@
 node_modules
 history_src
+dist
+*.config.js
+lib/markright.min.js

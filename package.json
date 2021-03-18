@@ -1,39 +1,38 @@
 {
-  "name": "markdown",
+  "name": "markright",
   "version": "0.0.1",
   "description": "A sensible Markdown parser for javascript",
   "keywords": [
+    "markright",
     "markdown",
     "text processing",
     "ast"
   ],
   "license": "MIT",
-  "main": "./lib/index.js",
-  "bin": {
-    "md2html": "./bin/md2html.js"
-  },
-  "files": [
-    "bin",
-    "lib",
-    "README.md"
-  ],
   "devDependencies": {
+    "@babel/core": "^7.13.10",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.22.0",
     "eslint-config-ali": "^12.0.1",
     "eslint-config-egg": "^9.0.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "2.2.1"
+    "jasmine-core": "^3.7.0",
+    "jest": "^26.6.3",
+    "karma": "^6.2.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "prettier": "2.2.1",
+    "rollup": "^2.41.5",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "scripts": {
-    "test": "grunt test",
-    "tap": "grunt node_tap",
-    "lint": "grunt jshint",
-    "prepublish": "grunt build"
+    "build": "cross-env BABEL_ENV=build node build"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=10.0.0"
   }
 }
